@@ -2,24 +2,19 @@
 
 package ru.sikuda.mobile.test3
 
-import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
@@ -28,13 +23,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.sikuda.mobile.test3.ui.theme.Test3Theme
-import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DefaultPreview()
+            AppNavigation()
+            //DefaultPreview()
         }
     }
 }
@@ -69,7 +64,8 @@ fun DefaultPreview() {
                             .selectable(
                                 true,
                                 onClick = {
-                                    Toast(context, "Click ${buttonsList[item]}")
+                                    //listTasks()
+                                    //Toast(context, "Click ${buttonsList[item]}")
                                 }
                             )
                     ) {
@@ -94,6 +90,6 @@ fun DefaultPreview() {
     }
 }
 
-fun Toast(context: Context, message: CharSequence) =
-    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+//fun Toast(context: Context, message: CharSequence) =
+//    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 
