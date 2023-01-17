@@ -8,15 +8,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,7 +37,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    val context = LocalContext.current
+    //val context = LocalContext.current
 
     Test3Theme {
         // A surface container using the 'background' color from the theme
@@ -50,7 +49,7 @@ fun DefaultPreview() {
             val buttonsList = arrayOf("Задания", "Разгрузки", "Навалы")
 
             LazyVerticalGrid(
-                cells = GridCells.Fixed(2),
+                GridCells.Fixed(2),
                 horizontalArrangement = Arrangement.Center,
                 verticalArrangement = Arrangement.Center
 
